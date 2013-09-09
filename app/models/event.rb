@@ -1,3 +1,3 @@
 class Event < ActiveRecord::Base
-  attr_protected
+  attr_accessible :remarks, :title, :when, :where, :dept
 end
