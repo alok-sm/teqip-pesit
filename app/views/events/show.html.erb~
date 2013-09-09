@@ -1,4 +1,4 @@
-<% content_for :title do %>@event.title<%end%>
+<% content_for :title do %><%= @event.title 5><%end%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +86,7 @@
 <% end %>
 <% if user_signed_in? %>
 <%=form_for @file,  :html=>{ :multipart => true} do |f| %>
-<h3>Attach files</h3><br>
+<h3>Attach files</h3>
 <%= f.hidden_field :event, :value => @event.id %>
 <%= f.file_field :attachment %><br>
 <%= f.submit "upload"%>
