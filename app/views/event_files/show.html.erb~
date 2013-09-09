@@ -1,0 +1,8 @@
+   <% if @event_file.attachment_file_name.nil? 
+  @event_file.destroy
+   end %>
+<center>Please wait till you are redirected. If your browser does not redirect you after 10 seconds, please click 
+<a href = "/events/<%= @event_file.event %>">here</a>&nbsp;&nbsp;&nbsp;
+<%= link_to 'Destroy', @event_file, :method => :delete, data: { confirm: 'Are you sure?' } %>
+<meta http-equiv="Refresh" content="0; url=/events/<%= @event_file.event %>"> 
+

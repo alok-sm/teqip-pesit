@@ -1,0 +1,21 @@
+<h1>Listing event_files</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @event_files.each do |event_file| %>
+  <tr>
+    <td><%= link_to 'Show', event_file %></td>
+    <td><%= link_to 'Edit', edit_event_file_path(event_file) %></td>
+    <td><%= link_to 'Destroy', event_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event file', new_event_file_path %>

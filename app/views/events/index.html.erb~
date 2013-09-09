@@ -1,0 +1,32 @@
+<% content_for :title do %>Listing all events<%end%>
+
+<h1>Listing events</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>When</th>
+    <th>Where</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.title %></td>
+    <td><%= event.when %></td>
+    <td><%= event.where %></td>
+    <td><%= link_to 'Show', event %></td>
+<% if user_signed_in? %>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+</tr>
+<% end %>
+</table>
+
+<br />
+<% if user_signed_in? %>
+<%= link_to 'New Event', new_event_path %>
+<% end %>

@@ -1,0 +1,43 @@
+<%= form_for(@publication) do |f| %>
+  <% if @publication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+      <ul>
+      <% @publication.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author, :required => true %>
+  </div><br />
+  <div class="field">
+    <%= f.label :co_authors %>
+    <%= f.text_area :co_authors, :placeholder => "Enter the co-authors separated by commas", :size => "40x5" %>
+  </div><br />
+  <div class="field">
+    <%= f.label :published_area %>
+    <%= f.text_area :published_area, :size => "40x5" %>
+  </div><br />
+  <div class="field">
+    <%= f.label :when %>
+    <%= f.text_field :when, :placeholder => "yyyy/mm/dd" %>
+  </div><br />
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, :required => true, :size => "40x5" %>
+  </div><br />
+  <div class="field">
+    <%= f.label :abstract %>
+    <%= f.file_field :abstract %>
+    <%= f.label :delete? %>
+    <%= f.check_box :empty_flag %>
+  </div><br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

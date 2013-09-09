@@ -1,0 +1,110 @@
+<% content_for :title do %>Publication by <%= @publication.author %><%end%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+     <link rel="stylesheet" href="/metro/css/metro.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="cards.css" />
+
+
+    
+  </head>
+  <body>
+   <div class = "main">
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                
+                <div class="nav-collapse collapse">
+                    <ul class="nav" style = "float:right;">
+                    
+                        <li class=""><a href="/people">People</a> </li>
+                        <li class=""><a href="/projects">Projects</a> </li>
+                        <li class=""><a href="/events">Events</a> </li>
+                        <li class=""><a href="/publications">Publications</a> </li>
+                        <li class=""><a href="/partners">Partners</a> </li>
+                        <% if user_signed_in? %>
+                          <li>
+                            <a href="/users/sign_out" class="sign_out" data-method="delete" rel="nofollow">
+                              Sign Out 
+                            </a>
+                          </li>
+                        <% end %>
+                        
+                    </ul>
+                    <ul class="nav" style = "float:left;">
+                        <li class=""><a href="/"><b>TEQIP-PESIT</b></a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <center>
+<div style = "text-align:left; width:940px;">
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Author:</b>
+  <%= @publication.author %>
+</p>
+<% if @publication.co_authors.present? %>
+<p>
+  <% @sep=@publication.co_authors.split(",") %>
+  <b>Co-Authors:</b>
+  <% @sep.each do |s| %>
+<br>
+  <%= s %>
+<% end %>
+</p>
+<% end %>
+
+<% if @publication.published_area.present? %>
+<p>
+  <b>Published area:</b>
+  <%= @publication.published_area %>
+</p>
+<% end %>
+
+<% if @publication.when.is_a? Date %>
+<p>
+  <b>When:</b>
+  <%= @publication.when %>
+</p>
+<% end %>
+
+<p>
+  <b>Description:</b>
+  <%= @publication.description %>
+</p>
+
+<% if !@publication.abstract_file_name.nil? %>
+<p>
+  <b>Abstract:</b>
+  <a href = "<%= @publication.abstract.url %>" >download file</a>
+
+
+</p>
+<% end %>
+
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_publication_path(@publication) %> |
+<% end %>
+<%= link_to 'Back', publications_path %>
+
+
+
+
+</div>
+</center>
+</div>
+</body>
+</html>

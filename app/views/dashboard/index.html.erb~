@@ -1,0 +1,182 @@
+<% content_for :title do %>Welcome to Teqip of PESIT<%end%>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <!--<style>*{border:1px dotted red;}</style>-->
+    <link rel="stylesheet" href="/metro/css/metro.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+
+    
+  </head>
+  <body>
+   <div class = "main">
+  <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                
+                <div class="nav-collapse collapse">
+                    <ul class="nav" style = "float:right;">
+                    
+                        <li class=""><a href="/people">People</a> </li>
+                        <li class=""><a href="/projects">Projects</a> </li>
+                        <li class=""><a href="/events">Events</a> </li>
+                        <li class=""><a href="/publications">Publications</a> </li>
+                        <li class=""><a href="/partners">Partners</a> </li>
+                        <% if user_signed_in? %>
+                          <li>
+                            <a href="/users/sign_out" class="sign_out" data-method="delete" rel="nofollow">
+                              Sign Out 
+                            </a>
+                          </li>
+                        <% end %>
+                        
+                    </ul>
+                    <ul class="nav" style = "float:left;">
+                        <li class=""><a href="/"><b>TEQIP-PESIT</b></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <center>
+
+    </center>
+
+    </div>
+    <div id="ca-container" class="ca-container">
+      <div class="ca-wrapper">
+        <div class="ca-item ca-item-1">
+                <div class="ca-item-main">
+                        
+                        <h3><br>What is TEQIP</h3>
+                        <a href="#" class="ca-more">
+                        	<font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;more&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+                        </a>
+                </div>
+                <div class="ca-content-wrapper">
+                        <div class="ca-content">
+                                
+                                <a href="#" class="ca-close">close</a>
+                                <div class="ca-content-text">
+                                    <font color="white">Technical Education Quality Improvement Programme (<b>TEQIP</b>) was envisaged in 2003 as a long term programme of about 10-12 years duration
+                                    to be implemented in 3 phases for transformation of the Technical Education System with the <b>World Bank</b> assistance. As per the TEQIP concept,
+                                    each phase is required to be designed on basis of lessons learnt from implementation of an earlier phase. <b>TEQIP-I</b> started a reform process
+                                    in 127 institutions. The reform process needs to be sustained and scaled-up for embedding gains in the system and taking the transformation
+                                    to a higher level. To continue the development activities initiated through TEQIP-I,a sequel project is planned as <b>TEQIP-II</b>.</font>
+                                </div>
+                                
+                        </div>
+                </div>
+        </div>
+        <div class="ca-item ca-item-2">
+                <div class="ca-item-main">
+                        
+                        <h3><br>TEQIP Goals</h3>
+                        <a href="#" class="ca-more"><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;more&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></a>
+                </div>
+                <div class="ca-content-wrapper">
+                        <div class="ca-content">
+                                
+                                <a href="#" class="ca-close">close</a>
+                                <div class="ca-content-text">
+                                        <font color="white">Project aims to scale up and support ongoing efforts of Government of India to improve quality of Technical Education and enhance existing
+                                        capabilities of the institutions to become dynamic, demand driven, quality conscious, efficient and forward looking, responsive to rapid
+                                        economic and technological developments occuring at the Local, State, National and International levels. </br>It has a clear focus on the
+                                        objectives to improve the overall quality of existing educational programmes.</font>
+                                </div>
+                                
+                        </div>
+                </div>
+        </div>
+        <div class="ca-item ca-item-3">
+                <div class="ca-item-main">
+                       
+                        <h3><br>TEQIP Objectives</h3>
+                        <a href="#" class="ca-more"><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;more&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></a>
+                </div>
+                <div class="ca-content-wrapper">
+                        <div class="ca-content">
+                                
+                                <a href="#" class="ca-close">close</a>
+                                <div class="ca-content-text">
+                                        <font color="white">* Strengthening Institutions to produce high quality engineers for better &nbsp;&nbsp;&nbsp;employment <br/>
+                                         * Scaling up postgraduate education and demand-driven research and &nbsp;&nbsp;&nbsp;development and innovaion <br/>
+                                         * Establishing Centers of Excellence for focused applicable research <br/>
+                                         * Training of faculty for effective teaching <br/>
+                                         * Enhancing Insitutional and System Management effectiveness</font>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div class="ca-item ca-item-4">
+                <div class="ca-item-main">
+                        
+                        <h3><br>About Pesit</h3>
+                        <a href="#" class="ca-more"><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;more&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></a>
+                </div>
+                <div class="ca-content-wrapper">
+                        <div class="ca-content">
+                                
+                                <a href="#" class="ca-close">close</a>
+                                <div class="ca-content-text">
+                                        <font color="white">PESIT was started in 1988 as the first engineering college under PES Group of Institutions. It is the first ever educational institution to recieve
+                                        the <b>ISO 9002 certification </b>in South-East Asia. Its <b>Vision</b> has been to make its student professionally superior and ethically strong global
+                                        manpower. It offers and facilitates academic excellence, leadership qualities, nurturing environment, and cutting edge infrastructure - everything
+                                        students needs to succeed. The thriving and vibrant campus life accommodates diverse and enthusiastic student community. PESIT alumini have occupied
+                                        high positions in premier organizations in India and abroad. If one has the drive and determination, PESIT will help realize ones Dream. <br/>
+                                        <center><b>To know more, please visit</b> <br><a href="http://www.pesit.pes.edu" style = "text-decoration:underline;"><font color="white">pesit.pes.edu</font></a></center>
+                                </div>
+                        </div>
+                </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+</center>
+     <center>
+     <div style="width:980px;;">
+    	
+    	<div style="display:inline-block;width:130px">
+    		<div>
+    			<img src="npiu-logo.jpg" width="100"/>
+    		</div>
+    	</div>
+    	
+    	<div style="display:inline-block;width:130px;">
+    		<div>
+    			<img src="/pes.jpg" width="100"/>
+    		</div>
+    	</div>
+    	
+    	<div style = "display:inline-block;width:130px">
+    		<div>
+    			<img src="spfu.gif" width="100"/>
+    		</div>
+        </div>
+        
+    </div></center><br>
+     <center><font color="black"> Copyright &copy; 2013- <a style="color: blue;" href="http://www.pes.edu">PES.EDU</a> . All Rights Reserved.</font></center>
+
+       <center><div></div></center>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="assets/js/jquery.contentcarousel.js"></script>
+    <script type="text/javascript">
+      $('#ca-container').contentcarousel();
+    </script>
+    <script src="assets/js/holder/holder.js"></script>
+    
+</div>
+  </body>
+</html>
+
+

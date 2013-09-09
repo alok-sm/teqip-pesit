@@ -1,0 +1,3 @@
+class EventFile < ActiveRecord::Base
+  attr_protected
+end

@@ -1,0 +1,17 @@
+<%= form_for(@event_file) ,  :html=>{ :multipart => true} do |f| %>
+  <% if @event_file.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event_file.errors.count, "error") %> prohibited this event_file from being saved:</h2>
+
+      <ul>
+      <% @event_file.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= f.file_field :attachment %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+class AddAbstractPaperclip < ActiveRecord::Migration
+  def up
+  end
+
+  def down
+  end
+end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  activity_name: MyString
+  department: MyString
+  name: MyString
+  email: MyString
+  teqip_roll: MyString
+  partner_type: MyString
+
+two:
+  activity_name: MyString
+  department: MyString
+  name: MyString
+  email: MyString
+  teqip_roll: MyString
+  partner_type: MyString

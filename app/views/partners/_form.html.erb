@@ -1,0 +1,42 @@
+<%= form_for(@partner) do |f| %>
+  <% if @partner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@partner.errors.count, "error") %> prohibited this partner from being saved:</h2>
+
+      <ul>
+      <% @partner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h3>Partner Name</h3>
+    <%= f.text_field :name ,:required => true%>
+  </div><br />
+  <div class="field">
+    <h3>Partner Email ID</h3>
+    <%= f.email_field :email , :required => true%>
+  </div><br />
+  <div class="field">
+    <h3>Partner TEQIP Role</h3>
+    <%= f.text_field :teqip_roll ,:required => true%>
+  </div><br />
+  <div class="field">
+    <h3>Department</h3>
+    <%= f.text_field :department ,:required => true%>
+  </div><br />
+  <div class="field">
+    <h3>Is The Partner From Industry Or Academic?</h3>
+      <%= f.radio_button :partner_type, "industry", :required => true%>Industry Partners</label>
+      <%= f.radio_button :partner_type, "academic", :required => true%>Academic Partners</label>
+  </div><br />
+  <div class="field">
+    <h3>List Of Activities</h3>
+    <%= f.text_area :activities ,:placeholder => "Enter The Activities Separated By Commas", :size => "40x5"%>
+  </div><br />
+  <div class="actions">
+    <center><%= f.submit %></center>
+  </div>
+<% end %>
