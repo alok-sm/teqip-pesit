@@ -5,7 +5,8 @@
 <html lang="en">
   <head>
   
-    <link rel="stylesheet" href="cosmo.css" type="text/css">
+    <link rel="stylesheet" href="/metro/css/metro.css" type="text/css">
+	 <link rel="stylesheet" href="cards.css" type="text/css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -17,80 +18,62 @@
   </head>
   <body>
    <div class = "main">
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a href="" class="navbar-brand">Teqip-Pesit</a>
-
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                
+                <div class="nav-collapse collapse">
+                    <ul class="nav" style = "float:right;">
+                    
+                        <li class=""><a href="/people">People</a> </li>
+                        <li class=""><a href="/projects">Projects</a> </li>
+                        <li class=""><a href="/events">Events</a> </li>
+                        <li class=""><a href="/publications">Publications</a> </li>
+                        <li class=""><a href="/partners">Partners</a> </li>
+                        <% if user_signed_in? %>
+                          <li>
+                            <a href="/users/sign_out" class="sign_out" data-method="delete" rel="nofollow">
+                              Sign Out 
+                            </a>
+                          </li>
+                        <% end %>
+                        
+                    </ul>
+                    <ul class="nav" style = "float:left;">
+                        <li class=""><a href="/"><b>TEQIP-PESIT</b></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="navbar-collapse collapse" id="navbar-main">
-          
-      
-
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-            <%end%>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/publications">Publications</a></li>
-            <li><a href="/partners">Partners</a></li>
-            <li><a href="/people">People</a></li>
-          </ul>
-
-        </div>
-      </div>
     </div>
 <br><br><br>
    
 <center><h1>Listing partners</h1></center><br>
-
-<center><h4>List of projects under industry partners</h4></center><br>
-<table border="1" class="tablemod" align="center">
-  <tr>
-     <td width="250"><b><h3>Activity name</h3></b></td>
-     <td width="250"><b><h3>Name</h3></b></td>
-   
-  </tr>
-<% @partners1.each do |partner| %>
-  <tr>
-    <td width="250"><%= partner.activity_name %></td>
-    <td width="250"><%= partner.department %></td>
-    <td width="250"><%= partner.name %></td>
-    <td width="100"><%= link_to 'Show', partner %></td>
-    <% if user_signed_in? %>
-    <td width="100"><%= link_to 'Edit', edit_partner_path(partner) %></td>
-    <td width="100"><%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-<br><br>
-<center><h4>List of projects under academic partners</h4></center><br>
-<table border="1" class="tablemod" align="center">
-  <tr>
-     <td width="250"><b><h3>Activity name</h3></b></td>
-     <td width="250"><b><h3>Name</h3></b></td>
-   
-  </tr>
-<% @partners2.each do |partner| %>
-  <tr>
-    <td width="250"><%= partner.activity_name %></td>
-    <td><%= partner.department %></td>
-    <td width="250"><%= partner.name %></td>
-    <td width="100"><%= link_to 'Show', partner %></td>
-    <% if user_signed_in? %>
-    <td width="100"><%= link_to 'Edit', edit_partner_path(partner) %></td>
-    <td width="100"><%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-
-<br />
-<% if user_signed_in? %>
+<center><% if user_signed_in? %>
 <%= link_to 'New Partner', new_partner_path %>
+<% end %><center>
+<center><h4>List of projects under industry partners</h4></center>
+
+<% @partners.each do |partner| %>
+   <a href="/partners/<%= partner.id %>">  
+  <div class="card">
+	<div class="card-inner">
+	<center><h3>Name :&nbsp<%= partner.name %></h3></center>
+	<center><h4>Industry Or Academic? :&nbsp<%= partner.partner_type %></h4></center>
+	<center><h4>List Of Activities :&nbsp<%= partner.activities %></h4></center> 
+  </div>
+</div>
+</a>
+<center><%= paginate @partners %></center>
+<center>
+    <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_partner_path(partner) %> |
+    <%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </center>
 <% end %>
+<br><br>
+<center><h4>List of projects under academic partners</h4></center>
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -101,8 +84,7 @@
       $('#ca-container').contentcarousel();
     </script>
     <script src="assets/js/holder/holder.js"></script>
-    <%= link_to "Sign in", new_user_session_path %>
-<%= link_to "Sign Up", new_user_registration_path%>
+    
   </body>
 </html>
 

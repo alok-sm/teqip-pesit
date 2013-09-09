@@ -52,7 +52,7 @@
 <center><% if user_signed_in? %>
 <%= link_to 'New Partner', new_partner_path %>
 <% end %><center>
-<center><h4>List of projects under industry partners</h4></center>
+
 
 <% @partners.each do |partner| %>
    <a href="/partners/<%= partner.id %>">  
@@ -73,7 +73,7 @@
   </center>
 <% end %>
 <br><br>
-<center><h4>List of projects under academic partners</h4></center>
+
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
