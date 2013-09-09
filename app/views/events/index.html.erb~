@@ -61,12 +61,12 @@
 </div>
 </div>
 </a>
-<center><%= paginate @events %></center>
+
     <center><% if user_signed_in? %>
     <%= link_to 'Edit', edit_event_path(event) %> |
     <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %><% end %><b> <%= event.title %></b>
 </center><% end %>
-
+<center><%= paginate @events %></center>
 <br />
 
 

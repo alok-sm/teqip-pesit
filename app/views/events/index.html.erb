@@ -64,7 +64,7 @@
 
     <center><% if user_signed_in? %>
     <%= link_to 'Edit', edit_event_path(event) %> |
-    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %><% end %><b> <%= event.title %></b>
+    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %><b> <%= event.title %></b><% end %>
 </center><% end %>
 <center><%= paginate @events %></center>
 <br />
