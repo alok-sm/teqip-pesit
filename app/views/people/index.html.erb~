@@ -51,7 +51,7 @@
 <% end %></center></b>
 
 <% @people.each do |person| %>
-  <a href="/people/<%= person.id %>">  
+    
   <div class="card" style = "width:500px;">
 	<div class="card-inner">
     <img style="float:left;margin-left:-50px;margin-right:50px;margin-top:10px;" src="<%= person.pic.url(:thumb) %>" />
@@ -61,7 +61,7 @@
     Phone:  <%= person.phone %></center>
 </div>
 </div>
-</a>
+
 <center><%= paginate @people %></center>
     <center><% if user_signed_in? %>
     <%= link_to 'Edit', edit_person_path(person) %> |

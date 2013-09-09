@@ -64,7 +64,7 @@
 	</div>
 </div>  
 </a>
-<center><%= paginate @projects %></center>
+
 <center>
 <% if user_signed_in? %>
     	<%= link_to 'Edit', edit_project_path(project) %> |
@@ -76,7 +76,7 @@
 
 <br />
 
-
+<center><%= paginate @projects %></center>
 
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>

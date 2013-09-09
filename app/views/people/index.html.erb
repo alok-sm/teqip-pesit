@@ -62,13 +62,14 @@
 </div>
 </div>
 
-<center><%= paginate @people %></center>
+
     <center><% if user_signed_in? %>
     <%= link_to 'Edit', edit_person_path(person) %> |
     <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %><% end %><b> <%= person.name %></b>
 </center><% end %>
 
 <br />
+<center><%= paginate @people %></center>
 
 
 

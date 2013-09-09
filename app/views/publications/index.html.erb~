@@ -1,23 +1,25 @@
 <% content_for :title do %>Listing all publications<%end%>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
   
-    <link rel="stylesheet" href="cosmo.css" type="text/css">
+    <link rel="stylesheet" href="metro/css/metro.css" type="text/css">
+ <link rel="stylesheet" href="cards.css" type="text/css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-     <link rel="stylesheet" href="/metro/css/metro.css" type="text/css">
 
 
     
   </head>
   <body>
    <div class = "main">
-      <div class="navbar navbar-fixed-top">
+   <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 
@@ -41,41 +43,37 @@
                     <ul class="nav" style = "float:left;">
                         <li class=""><a href="/"><b>TEQIP-PESIT</b></a></li>
                     </ul>
-                    
                 </div>
             </div>
         </div>
     </div>
-    <br><br><br>
-    <center>
-<div style = "text-align:left; width:940px;">
-
+<br><br><br>
+   
 
 <center><h1>Listing publications</h1></center><br>
-
-<table border="1" class="tablemod" align="center">
-  <tr>
-   <td width="200"><b><h3>Author</h3></b></td>
-    <td width="200"><b><h3>Description</h3></b></td>
-    
-  </tr>
+<center><% if user_signed_in? %>
+<%= link_to 'New Publication', new_publication_path %>
+<% end %></center>
 
 <% @publications.each do |publication| %>
-  <tr>
-    <td width="200"><%= publication.author %></td>
-    <td width="200"><%= publication.description %></td>
-    <td width="100"><%= link_to 'Show', publication %></td>
-    <% if user_signed_in? %>
-    <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
-    <td><%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
-  </tr>
+ <a href="/publications/<%= publication.id %>">  
+  <div class="card">
+	<div class="card-inner">
+	<center><h4>Author :&nbsp<%= publication.author %></h4></center>
+    <center><h4>Description :&nbsp<%= publication.description %></h4></center>
+  </div>
+</div>
+</a>  
+<center><%= paginate @publications %></center>
+   <center> <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_publication_path(publication) %> |
+    <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
+  </center>
 <% end %>
-</table>
+
 
 <br />
-<% if user_signed_in? %>
-<%= link_to 'New Publication', new_publication_path %>
-<% end %>
+
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
@@ -85,9 +83,8 @@
       $('#ca-container').contentcarousel();
     </script>
     <script src="assets/js/holder/holder.js"></script>
-</div>
-</center>
-</div>
-</body>
+    
+  </body>
 </html>
+
 
