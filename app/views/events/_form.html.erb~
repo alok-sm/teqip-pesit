@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <h3>What</h3>
+    <h3>What?</h3>
     <%= f.text_field :title, :required => true %>
   </div><br />
   <div class="field">
-    <h3>When</h3>
+    <h3>When?</h3>
     <%= f.date_select :when, :required => true %>
   </div><br />
   <div class="field">
-    <h3>Where</h3>
+    <h3>Where?</h3>
     <%= f.text_field :where, :required => true %>
   </div><br />
   <div class="field">

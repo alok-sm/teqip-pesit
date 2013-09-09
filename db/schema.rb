@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130909161254) do
+ActiveRecord::Schema.define(:version => 20130909183701) do
 
   create_table "event_files", :force => true do |t|
     t.datetime "created_at",              :null => false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20130909161254) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "file"
+    t.string   "dept"
   end
 
   create_table "partners", :force => true do |t|

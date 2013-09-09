@@ -67,6 +67,10 @@
   <b>Where:</b>
   <%= @event.where %>
 </p>
+<p>
+  <b>Department:</b>
+  <%= @event.dept %>
+</p>
 
 <% if @event.remarks.present? %>
 <p>
@@ -75,15 +79,18 @@
 </p>
 <% end %>
 
+<h3>Attached files:</h3>
+<% @file_old.each do |f| %>
+<a href = <%= f.attachment.url%> ><%= f.attachment_file_name %></a>&nbsp;&nbsp;&nbsp;
+<%= link_to 'Destroy', f, :method => :delete, data: { confirm: 'Are you sure?' } %><br>
+<% end %>
+<% if user_signed_in? %>
 <%=form_for @file,  :html=>{ :multipart => true} do |f| %>
-Attach files<br>
+<h3>Attach files</h3>
 <%= f.hidden_field :event, :value => @event.id %>
 <%= f.file_field :attachment %><br>
 <%= f.submit "upload"%>
 <% end %>
-<% @file_old.each do |f| %>
-<a href = <%= f.attachment.url%> ><%= f.attachment_file_name %></a>&nbsp;&nbsp;&nbsp;
-<%= link_to 'Destroy', f, :method => :delete, data: { confirm: 'Are you sure?' } %><br>
 <% end %>
 
 <% if user_signed_in? %>
