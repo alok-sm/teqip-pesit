@@ -54,10 +54,10 @@
   <a href="/events/<%= event.id %>">  
   <div class="card">
 	<div class="card-inner">
-     <center><h3><%= event.title %></h3>
+     <center><h3><%= event.title %></h3></center>
     When:<b><%= event.when %>&nbsp&nbsp</b><br>
     Where:<b><%= event.where %></b><br>
-    Department:<b><%= event.dept %></b></center>
+    Department:<b><%= event.dept %></b>
 </div>
 </div>
 </a>
