@@ -7,6 +7,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
+      
     end
   end
 
@@ -17,6 +18,8 @@ class EventsController < ApplicationController
 	@file = EventFile.new
 	@file_old = EventFile.where(:event => @event.id)
     respond_to do |format|
+    format.svg  { render :qrcode => "#{@event.title}%#{@event.where}%#{@event.dept}", :level => :l, :unit => 6, :fill => "ffffff" }
+    format.png  { render :qrcode => "#{@event.title}%#{@event.where}%#{@event.dept}" }
       format.html # show.html.erb
       format.json { render json: @event }
     end
