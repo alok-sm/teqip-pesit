@@ -19,6 +19,7 @@ class EventsController < ApplicationController
 	@file_old = EventFile.where(:event => @event.id)
     respond_to do |format|
     format.svg  { render :qrcode => "#{@event.title}%#{@event.where}%#{@event.dept}", :level => :l, :unit => 6, :fill => "ffffff" }
+    format.png  { render :qrcode => "#{@event.title}%#{@event.where}%#{@event.dept}" }
       format.html # show.html.erb
       format.json { render json: @event }
     end
@@ -83,4 +84,8 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def qr_code(size, url)
+  "https://chart.googleapis.com/chart?cht=qr&chs=#{size}x#{size}&chl=#{CGI.escape(url)}"
+end
 end
