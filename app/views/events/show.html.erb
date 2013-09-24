@@ -82,7 +82,7 @@
 <h3>Attached files:</h3>
 <% @file_old.each do |f| %>
 <a href = <%= f.attachment.url%> ><%= f.attachment_file_name %></a>&nbsp;&nbsp;&nbsp;
-<%= link_to 'Destroy', f, :method => :delete, data: { confirm: 'Are you sure?' } %><br>
+<% if user_signed_in? %><%= link_to 'Destroy', f, :method => :delete, data: { confirm: 'Are you sure?' } %><% end %><br>
 <% end %>
 <% if user_signed_in? %>
 <%=form_for @file,  :html=>{ :multipart => true} do |f| %>
